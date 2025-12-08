@@ -1,8 +1,9 @@
 # **Generated Content Detector**
-**CAP6415 – Computer Vision Project******
+## **CAP6415 – Computer Vision Project**
 
-**Muhammad Ali**
-Abstract
+### **Muhammad Ali**
+
+**Abstract**
 
 The main problem addressed in this project is the increasing difficulty of distinguishing AI-generated images from real photographic content due to advances in modern generative models such as Stable Diffusion, Midjourney, and DALL·E. The objective is to develop a system capable of detecting whether a given image is AI-generated or real, using concepts covered in class like feature extraction, representation learning, linear classifiers, and convolutional architecture principles.
 
