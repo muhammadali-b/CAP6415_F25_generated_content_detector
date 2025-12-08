@@ -150,20 +150,20 @@ After retraining with the expanded dataset, the model achieved:
 
 **Confusion Matrix**
 
-![Confusion matrix](backend/results/confusion_matrix.png)
+![Confusion matrix](results/confusion_matrix.png)
 
 **Qualitative Results**
 
 Sample predictions on real and AI-generated images (including my own photos and AI renders):
 
-![Sample predictions](backend/results/sample_predictions.png)
+![Sample predictions](results/sample_predictions.png)
 
 **Web UI**
 
 The detector is exposed through a simple Next.js frontend.  
 Users can upload an image, see a preview, and view the predicted label with confidence:
 
-![Web UI](backend/results/ui_screenshot.png)
+![Web UI](backend/ui_screenshot.png)
 
 ## 6. Installation & Execution
 
