@@ -148,6 +148,22 @@ After retraining with the expanded dataset, the model achieved:
 
 * Weighted avg: Precision 0.94, Recall 0.94, F1-score 0.94
 
+**Confusion Matrix**
+
+![Confusion matrix](backend/results/confusion_matrix.png)
+
+**Qualitative Results**
+
+Sample predictions on real and AI-generated images (including my own photos and AI renders):
+
+![Sample predictions](backend/results/sample_predictions.png)
+
+**Web UI**
+
+The detector is exposed through a simple Next.js frontend.  
+Users can upload an image, see a preview, and view the predicted label with confidence:
+
+![Web UI](backend/results/ui_screenshot.png)
 
 ## 6. Installation & Execution
 
