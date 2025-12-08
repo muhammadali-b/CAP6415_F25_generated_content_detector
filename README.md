@@ -4,19 +4,19 @@
 ### Muhammad Ali
 
 
-**Abstract**
+## **Abstract**
 
 The main problem addressed in this project is the increasing difficulty of distinguishing AI-generated images from real photographic content due to advances in modern generative models such as Stable Diffusion, Midjourney, and DALL·E. The objective is to develop a system capable of detecting whether a given image is AI-generated or real, using concepts covered in class like feature extraction, representation learning, linear classifiers, and convolutional architecture principles.
 
 The problem is solved by using CLIP ViT-B/32 as a pretrained feature extractor and training a Logistic Regression classifier on top of its embeddings. A total of 100,346 images were used for the final model:
 
-50,026 AI-generated images, including 50,000 from the CIFAKE dataset and the rest self-generated and manually collected AI images.
+      50,026 AI-generated images, including 50,000 from the CIFAKE dataset and the rest self-generated and manually collected AI images.
 
-50,320 real images, including CIFAKE real samples and additional manually added real photos.
+      50,320 real images, including CIFAKE real samples and additional manually added real photos.
 
 A lightweight FastAPI backend performs inference, and a Next.js frontend allows users to upload images and view predictions. This modular system demonstrates that classical ML techniques combined with strong pretrained encoders can achieve high detection accuracy on AI-generated content.
 
-1. Introduction
+## 1. Introduction
 
 Advances in generative image models have made synthetic images increasingly photorealistic. As a result, distinguishing human-created content from AI-generated content has become an important challenge in computer vision.
 
