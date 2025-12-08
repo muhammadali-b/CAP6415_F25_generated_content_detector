@@ -8,8 +8,8 @@ The problem is solved by using CLIP ViT-B/32 as a pretrained feature extractor a
 
       50,026 AI-generated images, including 50000 from CIFAKE dataset and rest are self-generated and searched AI images
 
-      50,320 real images, including CIFAKE real samples + additional real photos added manually    
-
+      50,320 real images, including CIFAKE real samples + additional real photos added manually  
+        
 A lightweight FastAPI backend performs inference, and a Next.js frontend allows users to upload images and view predictions. This modular system demonstrates that classical ML techniques combined with strong pretrained encoders can achieve high detection accuracy on AI-generated content.
 
 ## 1. Introduction
@@ -43,31 +43,28 @@ The feature extraction process is:
 ### 2.2 Logistic Regression Classifier
 A standard Logistic Regression classifier (scikit-learn) is trained on all embedding vectors. Although simple, this classifier performs well on high-quality pretrained features.
 Dataset summary:
-Class
-Count
-AI-generated
-50,026
-Real images
-50,320
-Total
-100,346
+
+**Class            Count**
+
+**AI-generated**     50,026
+
+**Real images**      50,320
+
+**Total**          100,346
+
 
 ### 2.3 Backend Inference (FastAPI)
 At runtime:
-User uploads an image
 
+1- User uploads an image
 
-Backend decodes the image (PIL)
+2- Backend decodes the image (PIL)
 
+3- CLIP generates a 512-dimensional vector
 
-CLIP generates a 512-dimensional vector
+4- Logistic Regression outputs class probabilities
 
-
-Logistic Regression outputs class probabilities
-
-
-Backend returns the following json format:
-
+5- Backend returns the following json format:
 
 {
   "label": "ai" | "real",
@@ -75,64 +72,59 @@ Backend returns the following json format:
 }
 
 ### 2.4 Web Frontend (Next.js)
+
 A user-friendly interface enables:
-drag-and-drop or file upload
 
+* drag-and-drop or file upload
 
-preview of the image
+* preview of the image
 
+* prediction with confidence score
 
-prediction with confidence score
+* clear/reset functionality
 
-
-clear/reset functionality
-
-
-responsive design using TailwindCSS
-
+* responsive design using TailwindCSS
 
 
 ## 3. System Architecture
       
-
+<img width="473" height="723" alt="Screenshot 2025-12-07 at 10 46 10 PM" src="https://github.com/user-attachments/assets/934e12cc-7364-4d8e-8808-7b41d9880f9a" />
 
 Modules:
-ml/extract_features.py
 
+- ml/extract_features.py
 
-ml/train_classifier.py
+- ml/train_classifier.py
 
+- model_loader.py
 
-model_loader.py
+- main.py (API)
 
-
-main.py (API)
-
-
-web/app/page.tsx (frontend)
-
+- web/app/page.tsx (frontend)
 
 
 ## 4. Dataset
-4.1 CIFAKE Dataset (Base)
+### 4.1 CIFAKE Dataset (Base)
+
 CIFAKE combines:
-50k real CIFAR-10 images,
 
+* 50k real CIFAR-10 images,
 
-50k AI-generated synthetic images (created via Stable Diffusion).
-
+* 50k AI-generated synthetic images (created via Stable Diffusion).
 
 This provides a balanced and easy-to-process starting point.
-4.2 Extended Real Dataset
+
+## 4.2 Extended Real Dataset
+
 To improve generalization to natural, real-world photographs, an additional 320+ personal real images were added.
+
 Final dataset distribution:
-Real: 50,320
 
+- **Real:** 50,320
 
-AI-generated: 50,026
+- **AI-generated:** 50,026
 
-
-Total: 100,346
+- **Total:** 100,346
 
 
 
