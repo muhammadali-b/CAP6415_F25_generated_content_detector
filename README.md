@@ -163,7 +163,7 @@ Sample predictions on real and AI-generated images (including my own photos and 
 The detector is exposed through a simple Next.js frontend.  
 Users can upload an image, see a preview, and view the predicted label with confidence:
 
-![Web UI](backend/ui_screenshot.png)
+![Web UI](results/ui_screenshot.png)
 
 ## 6. Installation & Execution
 
