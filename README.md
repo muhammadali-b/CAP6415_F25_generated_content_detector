@@ -135,13 +135,10 @@ After retraining with the expanded dataset, the model achieved:
 
 **Classification Report**
 
-| Class |  Precision  |  Recall  |  F1-score  |  Support  |
-
-| ----- | ----------- | -------- | ---------- | --------- |
-
-| real  |   0.94      |   0.93   |   0.94     |   7548    |
-
-| ai    |   0.93      |  0.94    |   0.94     |   7504    |
+| Class | Precision | Recall | F1-score | Support |
+|-------|-----------|--------|----------|---------|
+| real  | 0.94      | 0.93   | 0.94     | 7548    |
+| ai    | 0.93      | 0.94   | 0.94     | 7504    |
 
 **Overall metrics:**
 
