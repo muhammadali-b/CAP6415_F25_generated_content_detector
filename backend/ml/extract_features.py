@@ -1,3 +1,57 @@
+"""
+extract_features.py
+
+This script generates CLIP image embeddings for the entire dataset.
+It prepares the training data that will later be used by the classifier.
+
+What this module does:
+    1. Looks for images in two folders:
+           backend/data/real/   These are the non-AI images, includes 50000 CIFAKE images
+                                and 100s of personally added images
+           backend/data/ai/     These are the AI-generated images, includes 50000 CIFAKE images
+                                and many searched and self-created images
+
+    2. Loads the CLIP ViT-B/32 model and its preprocessing function.
+
+    3. For every image in both folders:
+           - Opens the image with PIL,
+           - Preprocesses it using CLIP transforms,
+           - Computes a 512-dimensional embedding using CLIP,
+           - Normalizes the embedding,
+           - Stores the feature vector and its label
+                 (0 = real, 1 = ai)
+
+    4. Combines all embeddings into:
+           X: feature matrix
+           y: label vector
+       Then shuffles them to randomize the ordering.
+
+    5. Saves the final dataset as:
+           backend/ml/features_cifake.npz
+       This file is required by train_classifier.py.
+
+Required folder structure:
+    backend/
+        data/
+            real/   place all real (non-AI) images here
+            ai/     place all AI-generated images here
+        ml/
+            extract_features.py
+            features_cifake.npz : output created by this script
+
+Dependencies:
+    - torch
+    - numpy
+    - pillow (PIL)
+    - openai-clip (clip)
+
+Important:
+    Run this script BEFORE training the classifier, since it creates
+    the embeddings used by `train_classifier.py`.
+
+Author:
+    Muhammad Ali
+"""
 
 import os
 from pathlib import Path

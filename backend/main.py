@@ -1,6 +1,33 @@
+"""
+main.py
+
+FastAPI application that exposes the AI Content Detector as a simple HTTP API.
+
+This module:
+    - Configures CORS so the Next.js frontend (running on http://localhost:3000)
+      can call the backend safely.
+    - Defines the `DetectionResult` response model returned to the client.
+    - Provides health-check endpoints ("/" and "/ping") for debugging.
+    - Implements the "/detect" endpoint, which:
+        * accepts an uploaded image file,
+        * validates the content type,
+        * decodes it into a PIL Image,
+        * forwards it to the CLIP + Logistic Regression pipeline
+          (via `model_loader.predict_image`),
+        * and returns the predicted label ("real" or "ai") with a confidence score.
+
+Dependencies:
+    - fastapi, uvicorn
+    - pydantic
+    - pillow (PIL)
+    - model_loader.py (for the `predict_image` function)
+
+Author:
+    Muhammad Ali
+"""
+
 from io import BytesIO
 from pathlib import Path
-
 from fastapi import FastAPI, File, UploadFile, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
@@ -22,7 +49,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-
 class DetectionResult(BaseModel):
     """
     Response model for image detection results.
@@ -34,7 +60,6 @@ class DetectionResult(BaseModel):
     """
     label: str
     confidence: float
-
 
 # ---- Simple health endpoints ----
 

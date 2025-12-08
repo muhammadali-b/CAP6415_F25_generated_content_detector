@@ -1,6 +1,31 @@
+"""
+train_classifier.py
+
+Training script for the AI Generated Content Detector classifier.
+
+This module:
+    - Loads precomputed CLIP image embeddings and labels from
+      `ml/features_cifake.npz`.
+    - Splits the dataset into train, validation, and test sets using
+      stratified sampling to keep the real/ai balance.
+    - Trains a Logistic Regression classifier on top of the CLIP
+      embeddings to distinguish between real and AI-generated images.
+    - Evaluates the model on the test set and prints accuracy,
+      classification report, and confusion matrix.
+    - Saves the trained classifier to `models/clip_logreg_detector.pkl`
+      so it can be used later by the FastAPI backend for inference.
+
+Dependencies:
+    - numpy
+    - scikit-learn
+    - joblib
+    - The feature file created by `extract_features.py`.
+
+Author:
+    Muhammad Ali
+"""
 
 from pathlib import Path
-
 import joblib
 import numpy as np
 from sklearn.linear_model import LogisticRegression
