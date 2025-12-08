@@ -181,13 +181,19 @@ uvicorn main:app --reload --port 8000
 
 
 **Feature Extraction & Training**
+
 python ml/extract_features.py
+
 python ml/train_classifier.py
 
 **Frontend (Next.js)**
+
 cd web
+
 npm install
+
 npm run dev
+
 
 **Visit:**
 http://localhost:3000
