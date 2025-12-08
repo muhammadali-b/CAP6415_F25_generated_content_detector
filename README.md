@@ -1,7 +1,8 @@
 # **Generated Content Detector**
 ## **CAP6415 – Computer Vision Project**
 
-### **Muhammad Ali**
+### **Muhammad Ali
+**
 
 **Abstract**
 
