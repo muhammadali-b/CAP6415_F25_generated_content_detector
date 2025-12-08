@@ -32,5 +32,4 @@ results_dir.mkdir(exist_ok=True)
 
 output_path = results_dir / "confusion_matrix.png"
 plt.savefig(output_path, dpi=300, bbox_inches="tight")
-
 print(f"Saved confusion matrix to {output_path}")
