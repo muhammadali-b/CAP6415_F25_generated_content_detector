@@ -130,121 +130,91 @@ Final dataset distribution:
 
 ## 5. Results
 After retraining with the expanded dataset, the model achieved:
-Final Test Accuracy: 0.9354
-Classification Report
-Class
-Precision
-Recall
-F1-score
-Support
-real
-0.94
-0.93
-0.94
-7548
-ai
-0.93
-0.94
-0.94
-7504
 
-Overall metrics:
-Accuracy: 0.94
+### Final Test Accuracy: 0.9354
 
+**Classification Report**
 
-Macro avg: Precision 0.94, Recall 0.94, F1-score 0.94
+Class      Precision      Recall      F1-score      Support
 
+real      0.94            0.93        0.94          7548
 
-Weighted avg: Precision 0.94, Recall 0.94, F1-score 0.94
+ai        0.93            0.94        0.94          7504
 
+**Overall metrics:**
+
+* Accuracy: 0.94
+
+* Macro avg: Precision 0.94, Recall 0.94, F1-score 0.94
+
+* Weighted avg: Precision 0.94, Recall 0.94, F1-score 0.94
 
 
 ## 6. Installation & Execution
-Backend (FastAPI)
+
+**Backend (FastAPI)**
 cd backend
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 uvicorn main:app --reload --port 8000
 
-Feature Extraction & Training
+**Feature Extraction & Training**
 python ml/extract_features.py
 python ml/train_classifier.py
 
-Frontend (Next.js)
+**Frontend (Next.js)**
 cd web
 npm install
 npm run dev
 
-Visit:
+**Visit:**
 http://localhost:3000
 
 
 ## 7. Dependencies
-Backend
+
+**Backend**
+
 Python 3.9+
-
-
 PyTorch
-
-
 NumPy
-
-
 Pillow
-
-
 FastAPI + Uvicorn
-
-
 scikit-learn
-
-
 python-multipart
-
-
 OpenAI CLIP
 
-
-Frontend
+**Frontend**
 Node.js 18+
-
-
 React / Next.js
-
-
 TailwindCSS
 
 
 
 ## 8. Attribution
+
 This project uses:
-CLIP ViT-B/32
+
+* CLIP ViT-B/32
  Radford et al., “Learning Transferable Visual Models From Natural Language Supervision,” OpenAI, 2021.
 
-
-CIFAKE dataset
+* CIFAKE dataset
  Synthetic CIFAR-10 images generated via Stable Diffusion.
 
-
-Scikit-learn Logistic Regression
+* Scikit-learn Logistic Regression
  Used for training the binary classification model.
 
-
-FastAPI documentation
+* FastAPI documentation
  Used for structuring the backend API.
 
-
-
 ## 9. Future Work
-Continue expanding the training dataset
 
+* Continue expanding the training dataset
 
-Deploy the full system on a cloud server
+* Deploy the full system on a cloud server
 
+* Extend detection to video frames
 
-Extend detection to video frames
-
-
-Add mobile app support (Android/iOS)
+* Add mobile app support (Android/iOS)
 
