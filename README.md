@@ -168,11 +168,17 @@ Users can upload an image, see a preview, and view the predicted label with conf
 ## 6. Installation & Execution
 
 **Backend (FastAPI)**
+
 cd backend
+
 python3 -m venv .venv
+
 source .venv/bin/activate
+
 pip install -r requirements.txt
+
 uvicorn main:app --reload --port 8000
+
 
 **Feature Extraction & Training**
 python ml/extract_features.py
@@ -191,19 +197,19 @@ http://localhost:3000
 
 **Backend**
 
-Python 3.9+
-PyTorch
-NumPy
-Pillow
-FastAPI + Uvicorn
-scikit-learn
-python-multipart
-OpenAI CLIP
+- Python 3.9+
+- PyTorch
+- NumPy
+- Pillow
+- FastAPI + Uvicorn
+- scikit-learn
+- python-multipart
+- OpenAI CLIP
 
 **Frontend**
-Node.js 18+
-React / Next.js
-TailwindCSS
+- Node.js 18+
+- React / Next.js
+- TailwindCSS
 
 
 
