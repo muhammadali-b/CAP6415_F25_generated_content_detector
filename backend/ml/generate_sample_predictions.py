@@ -32,8 +32,10 @@ from model_loader import predict_image  # uses your existing CLIP + Logistic Reg
 SAMPLES_REAL_DIR = BACKEND_DIR / "results_samples" / "real"
 SAMPLES_AI_DIR = BACKEND_DIR / "results_samples" / "ai"
 
-RESULTS_DIR = BACKEND_DIR / "results"
+PROJECT_ROOT = BACKEND_DIR.parent
+RESULTS_DIR = PROJECT_ROOT / "results"
 RESULTS_DIR.mkdir(exist_ok=True)
+
 
 OUTPUT_PATH = RESULTS_DIR / "sample_predictions.png"
 
