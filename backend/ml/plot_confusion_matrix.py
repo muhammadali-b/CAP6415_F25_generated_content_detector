@@ -24,10 +24,12 @@ plt.title("Confusion Matrix")
 plt.xlabel("Predicted Label")
 plt.ylabel("True Label")
 
-results_dir = Path(__file__).resolve().parents[1] / "results"
+backend_dir = Path(__file__).resolve().parents[1]
+project_root = backend_dir.parent
+
+results_dir = project_root / "results"
 results_dir.mkdir(exist_ok=True)
 
 output_path = results_dir / "confusion_matrix.png"
 plt.savefig(output_path, dpi=300, bbox_inches="tight")
-
 print(f"Saved confusion matrix to {output_path}")
